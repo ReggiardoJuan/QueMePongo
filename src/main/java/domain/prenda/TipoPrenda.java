@@ -1,0 +1,32 @@
+package domain.prenda;
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+
+import static domain.prenda.CategoriaPrenda.*;
+
+@AllArgsConstructor
+public enum TipoPrenda {
+  CAMISA(PARTE_SUPERIOR),
+  CAMISOLA(PARTE_SUPERIOR),
+  REMERA(PARTE_SUPERIOR),
+  SACO(PARTE_SUPERIOR),
+  CAMPERA(PARTE_SUPERIOR),
+  ZAPATILLAS(CALZADO),
+  ZAPATOS(CALZADO),
+  SANDALIA(CALZADO),
+  TACOS(CALZADO),
+  OJOTAS(CALZADO),
+  PANTALON_VESTIR(PARTE_INFERIOR),
+  SHORT(PARTE_INFERIOR),
+  POLLERA(PARTE_INFERIOR),
+  ROPA_INTERIOR(PARTE_INFERIOR),
+  CALZA(PARTE_INFERIOR),
+  AROS(ACCESORIOS),
+  LENTES(ACCESORIOS),
+  COLLAR(ACCESORIOS),
+  PULSERA(ACCESORIOS),
+  RELOJ(ACCESORIOS);
+
+  @Getter private CategoriaPrenda categoriaPrenda;
+}
