@@ -21,3 +21,27 @@
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
+
+# maven build
+target/**
+
+# IJ files
+*.iml
+.idea/**
+
+# Code files
+.vscode/
+
+# Eclipse files
+.project
+.classpath
+.settings/
+.factorypath
+
+# Windows files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# OSX files
+.DS_Store
