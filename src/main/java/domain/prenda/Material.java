@@ -1,12 +1,14 @@
 package domain.prenda;
 
 public enum Material {
-  MADERA,
   PLASTICO,
-  VIDRIO,
   CUERO,
+  LANA,
   ALGODON,
   JEAN,
-  SEDA
+  SEDA,
+  PIQUE,
+  ACETATO,
+  CAUCHO
   // ... etc
 }

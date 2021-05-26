@@ -1,11 +1,12 @@
 package domain.prenda;
 
+import domain.exceptions.MaterialNoPermitidoParaPrendaException;
+import domain.exceptions.ParametroNuloException;
 import lombok.Getter;
 import lombok.Setter;
 
 import java.util.Arrays;
 import java.util.Objects;
-import java.util.concurrent.atomic.AtomicReference;
 
 @Getter
 @Setter
@@ -20,6 +21,12 @@ public class BorradorPrenda {
     this.tipoPrenda = Objects.requireNonNull(tipoPrenda, "El tipo de prenda no puede ser nulo");
   }
   public void agregarMaterial(Material material){
+    if(getTipoPrenda() == null) {
+      throw new ParametroNuloException("Se debe definir el tipo de prenda primero");
+    }
+    if(!getTipoPrenda().getMaterialesPermitidos().contains(material) && material != null) {
+      throw new MaterialNoPermitidoParaPrendaException();
+    }
     this.material = Objects.requireNonNull(material, "El material no puede ser nulo");
   }
   public void agregarTrama(Trama trama){
@@ -31,9 +38,9 @@ public class BorradorPrenda {
   public void agregarColorSecundario(Color colorSecundario){
     this.colorSecundario = colorSecundario;
   }
-  public Prenda crearPrenda() throws Exception {
+  public Prenda crearPrenda() {
     if(hayCampoNulo()){
-      throw new Exception("La prenda no puede ser creada por campos obligatorios nulos");
+      throw new ParametroNuloException("La prenda no puede ser creada con campos obligatorios nulos");
     }
     return new Prenda(tipoPrenda, material, trama, colorPrincipal, colorSecundario);
   }
