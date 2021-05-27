@@ -1,7 +1,7 @@
 package domain.prenda;
 
-import domain.exceptions.MaterialNoPermitidoParaPrendaException;
-import domain.exceptions.ParametroNuloException;
+import exceptions.MaterialNoPermitidoParaPrendaException;
+import exceptions.ParametroNuloException;
 import lombok.Getter;
 import lombok.Setter;
 

@@ -1,4 +1,4 @@
-package domain.exceptions;
+package exceptions;
 
 public class ParametroNuloException extends RuntimeException {
   public ParametroNuloException(String msg) {

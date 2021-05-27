@@ -1,4 +1,8 @@
-package domain.prenda;
+package domain.atuendo;
+
+import domain.prenda.BorradorPrenda;
+import domain.prenda.Color;
+import domain.prenda.Prenda;
 
 import static domain.prenda.Material.*;
 import static domain.prenda.TipoPrenda.*;
