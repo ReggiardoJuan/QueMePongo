@@ -1,7 +1,7 @@
 package domain.sugerencia;
 
 import com.google.common.collect.Sets;
-import domain.Guardarropa;
+import domain.guardarropa.Guardarropa;
 import domain.atuendo.Atuendo;
 import domain.clima.ProveedorClima;
 import domain.prenda.Prenda;

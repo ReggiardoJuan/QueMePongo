@@ -1,4 +1,4 @@
-package domain;
+package domain.guardarropa;
 
 import domain.prenda.CategoriaPrenda;
 import domain.prenda.Prenda;

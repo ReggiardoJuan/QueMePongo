@@ -2,6 +2,8 @@ package domain.clima;
 
 import domain.services.AccuWeatherAPI;
 import domain.services.ClimaAPI;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.time.Duration;
 import java.time.LocalDateTime;
@@ -11,8 +13,13 @@ import java.util.Objects;
 
 public class ProveedorAccuweather implements ProveedorClima{
   private ClimaAPI climaAPI;
+  @Getter
+  @Setter
   private Map<String, Object> ultimaRespuesta;
+  @Getter
+  @Setter
   private Duration periodoExpiracion;
+  @Getter
   private LocalDateTime proximaExpiracion;
 
   public ProveedorAccuweather(Duration tiempoExpiracion) {
@@ -40,7 +47,7 @@ public class ProveedorAccuweather implements ProveedorClima{
     return ultimaRespuesta;
   }
 
-  private Boolean climaExpirado() {
+  public Boolean climaExpirado() {
     return proximaExpiracion.isAfter(LocalDateTime.now());
   }
   private void renovarClima() {
