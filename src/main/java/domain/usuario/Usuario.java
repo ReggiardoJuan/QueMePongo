@@ -14,6 +14,7 @@ import static domain.prenda.EstadoPropuesta.*;
 public class Usuario {
   @Getter
   private String nombreUsuario;
+  @Getter
   @Setter
   private String contrasenia;
   @Getter
@@ -29,9 +30,11 @@ public class Usuario {
     this.contrasenia = Objects.requireNonNull(contrasenia, "La contrasenia no puede ser nulo");
     this.guardarropas = new ArrayList<>();
     this.propuestas = new ArrayList<>();
+    this.decisiones = new ArrayList<>();
   }
 
   public void agregarGuardarropas(Guardarropa guardarropa) {
+    guardarropa.addUsuario(this);
     this.guardarropas.add(guardarropa);
   }
   public void eliminarGuardarropas(Guardarropa guardarropa) {

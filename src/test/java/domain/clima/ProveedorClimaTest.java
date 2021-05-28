@@ -34,7 +34,7 @@ class ProveedorClimaTest {
 
     LocalDateTime expiracionFinal = proveedorTest.getProximaExpiracion();
 
-    assertFalse(expiracionFinal == expiracionInicial);
+    assertNotSame(expiracionFinal, expiracionInicial);
     assertEquals(expiracionFinal.format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm")),
         expiracionInicial.plus(proveedorTest.getPeriodoExpiracion()).format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm")));
   }
